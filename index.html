@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Payment Form</title>
+    <!--<link type="text/css" rel="stylesheet" href="src/stylesheets/stylesheet.css"/>-->
+</head>
+<body>
+     <section class="form-section">
+         <h1>Sign Up Now</h1>
+         <p>Pick your new website, free forever</p>
+         <hr>
+
+         <form role="form">
+            <section class="web-address">
+                <h3>Pick a website address.</h3>
+                <label for="web-address">Website address</label>
+                <input type="text" name="web-address" id="web-address" aria-required="true" aria-label="Address name" placeholder="domain name" tabindex="1" required> .free-websites.com
+            </section>
+
+
+            <section class="basic-info">
+                <h3>Create an account.</h3>
+
+                <label for="fullName">Full name</label>
+                <input type="text" name="fullName" id="fullName" aria-required="true" aria-label="Full name" placeholder="Firstame Lastname" tabindex="2" required>
+
+                <label for="emailAdd">Email address</label>
+                <input type="email" name="emailAddress" id="emailAdd" aria-required="true" aria-label="Email address" placeholder="email" tabindex="3" required>
+
+                <label for="passwrd">Password</label>
+                <input type="password" name="password" id="passwrd" aria-required="true" aria-label="Password" placeholder="password" tabindex="4" required>
+
+                <input type="checkbox" name="reveal" aria-label="Reveal password" id="password"tabindex="5" required> Reveal Password
+
+            </section>
+
+
+            <section class="payment-info">
+                <h3>Enter your payment info.</h3>
+
+                <section class="card-section-1">
+                    <label for="ccNumber">Credit card number</label>
+                    <input type="text" name="cardNumber" id="ccNumber" aria-required="true" aria-label="Credit card number" tabindex="6" required>
+                    <img src="" alt="Visa">
+                    <img src="" alt="Maestro">
+                    <img src="" alt="American">
+                </section>
+
+                <section class="card-section-2">
+                    <label for="secCode">Security code</label>
+                    <input type="text" name="securityCode" id="secCode" aria-required="true" aria-label="Security code" tabindex="7" required>
+                    <label for="expMonth">Expiration date</label>
+                    <input type="number" name="expMonth" id="expMonth" aria-label="Expiration month" min="1" max="12" tabindex="8">
+                    <input type="number" name="expYear" id="expirationYear" aria-label="Expiration year" min="2000" max="2020" tabindex="9" required>
+                </section>
+
+            </section>
+            <button class="btn btn-info" type="submit" name="submit" aria-label="Submit form button" tabindex="10">Create your website</button>
+        </form>
+     </section>
+</body>
+</html>

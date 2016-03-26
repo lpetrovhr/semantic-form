@@ -1,0 +1,134 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+
+   Style reset
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+*,
+* :before,
+* :after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing:    border-box;
+    box-sizing:         border-box;
+}
+
+.form-section {
+    width: 25%;
+    height: auto;
+    padding: 20px;
+    background-color: #fff;
+    font: 14px Helvetica, Arial, sans-serif;
+}
+
+.form-section h1 {
+    font-size: 24px;
+    margin-bottom: 1.5px;
+    font-weight: 400;
+    color: dodgerblue;
+}
+
+.form-section h3 {
+    font-size: 19px;
+    color: dodgerblue;
+}
+
+.form-section hr {
+    border: 1px solid dodgerblue;
+    margin: 4% 0 4% 0;
+}
+
+.form-section fieldset {
+    margin: 0px 0px 20px 0px;
+    background-color: #eee;
+    padding: 10px;
+}
+
+.basic-info label{
+    display: block;
+}
+
+.basic-info input {
+    display: block;
+}
+
+.form-section input {
+    border: 1px solid dodgerblue;
+    border-radius: 3px;
+    margin: 2px 0px 10px 0px;
+    padding: 2px;
+}
+
+.form-section label{
+    display: block;
+}
+
+.btn {
+    width: 100%;
+    border-radius: 2px;
+    padding: 4px;
+    border: 1px solid;
+}
+
+.btn-info {
+    border-color: dodgerblue;
+    background-color: dodgerblue;
+    color: #fff;
+}
+
+.web-address label {
+    display: block;
+}
+
+#password {
+    width: auto;
+    display: inline;
+}
+
+.card-section {
+    display: block;
+}

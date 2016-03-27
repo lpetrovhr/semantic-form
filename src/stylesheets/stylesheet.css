@@ -49,86 +49,158 @@ table {
     border-spacing: 0;
 }
 
-*,
-* :before,
-* :after {
+html {
     -webkit-box-sizing: border-box;
     -moz-box-sizing:    border-box;
     box-sizing:         border-box;
 }
 
-.form-section {
-    width: 25%;
-    height: auto;
-    padding: 20px;
+*,
+* :before,
+* :after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing:    inherit;
+    box-sizing:         inherit;
+}
+
+.form--main {
+    font: 15px Aerial sans-serif;
+    width: 30%;
+    padding: 2%;
+    border: 13px solid #79aae1;
     background-color: #fff;
-    font: 14px Helvetica, Arial, sans-serif;
+    margin: 0 auto;
 }
 
-.form-section h1 {
-    font-size: 24px;
-    margin-bottom: 1.5px;
+.form--main h1,h2 {
+    color: #4169E1;
+}
+
+.form--main h1 {
+    font-size: 23px;
+    font-weight: 600;
+}
+
+.form--main h2 {
+    background-color: #fff;
+    font-size: 18px;
     font-weight: 400;
-    color: dodgerblue;
 }
 
-.form-section h3 {
-    font-size: 19px;
-    color: dodgerblue;
+.form--main header {
+    border-bottom: 1px solid #4169E1;
 }
 
-.form-section hr {
-    border: 1px solid dodgerblue;
-    margin: 4% 0 4% 0;
+.form--main header p {
+    margin-bottom: 5px;
 }
 
-.form-section fieldset {
-    margin: 0px 0px 20px 0px;
+.form__label {
+    display: block;
+}
+
+.form__label:after {
+    content: ":";
+}
+
+.form--section {
     background-color: #eee;
-    padding: 10px;
+    margin-top: 4%;
+    padding-bottom: 2%;
 }
 
-.basic-info label{
-    display: block;
+.form--section label {
+    margin: 2%;
 }
 
-.basic-info input {
-    display: block;
+.form--section input {
+    margin-left: 2%;
 }
 
-.form-section input {
-    border: 1px solid dodgerblue;
+.form--section input {
+    border: 2px solid #79aae1;
     border-radius: 3px;
-    margin: 2px 0px 10px 0px;
-    padding: 2px;
+    padding: 1%;
 }
 
-.form-section label{
+img {
+
+    width: 24px;
+    height: 24px;
+    margin-top: 2px;
+}
+
+.block_element {
     display: block;
+    width: 95%;
+}
+
+.inline_element {
+    display: inline;
 }
 
 .btn {
     width: 100%;
-    border-radius: 2px;
-    padding: 4px;
-    border: 1px solid;
-}
-
-.btn-info {
-    border-color: dodgerblue;
-    background-color: dodgerblue;
+    margin-top: 2%;
     color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    border: 1px solid;
+    padding: 2%;
 }
 
-.web-address label {
-    display: block;
+.btn--info {
+    background-color: #4169E1;
+    border-color: #4169E1;
 }
 
-#password {
-    width: auto;
-    display: inline;
+#web-address {
+    float: left;
+    border-right: 1px solid #eee;
+    width: 60%;
+    outline: none;
 }
 
-.card-section {
-    display: block;
+#extension {
+    margin-left: -20px;
+    width: 40%;
+    text-align: right;
+    border-left: 1px solid #eee;
+}
+
+.left {
+    width: 50%;
+    float: left;
+}
+
+.right {
+    float: right;
+    margin-top: 7%;
+    margin-right: 4%;
+}
+
+#right {
+    margin-left: 60%;
+}
+
+#secCode {
+    width: 50%;
+    margin-top: 1px;
+}
+
+#month {
+
+    width: 10%;
+}
+
+#year {
+    width: 20%;
+}
+
+#li_left {
+    float: left;
+}
+
+#li_right {
+    margin-left: 20%;
 }

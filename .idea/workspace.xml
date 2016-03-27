@@ -30,8 +30,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.64763457">
-              <caret line="55" column="19" selection-start-line="55" selection-start-column="19" selection-end-line="55" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.73572594">
+              <caret line="55" column="20" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -220,7 +220,13 @@
       <option name="project" value="LOCAL" />
       <updated>1459113869778</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="section elimination">
+      <created>1459114973087</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1459114973087</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -259,7 +265,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="html changes&#10;added css but need refactoring, also added jquery validator but thinking about going with parsley" />
-    <option name="LAST_COMMIT_MESSAGE" value="html changes&#10;added css but need refactoring, also added jquery validator but thinking about going with parsley" />
+    <MESSAGE value="section elimination" />
+    <option name="LAST_COMMIT_MESSAGE" value="section elimination" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -308,8 +315,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64763457">
-          <caret line="55" column="19" selection-start-line="55" selection-start-column="19" selection-end-line="55" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.73572594">
+          <caret line="55" column="20" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="20" />
           <folding />
         </state>
       </provider>

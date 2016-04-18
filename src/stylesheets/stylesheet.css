@@ -15,7 +15,7 @@ dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
+figure, figcaption, footer, header,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
     margin: 0;
@@ -25,25 +25,31 @@ time, mark, audio, video {
     font: inherit;
     vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+footer, header, menu, nav, section {
     display: block;
 }
+
 body {
     line-height: 1;
 }
+
 ol, ul {
     list-style: none;
 }
+
 blockquote, q {
     quotes: none;
 }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
     content: '';
     content: none;
 }
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -64,52 +70,58 @@ html {
 }
 
 .form--main {
-    font: 15px Aerial sans-serif;
-    width: 30%;
-    padding: 2%;
-    border: 13px solid #79aae1;
+    font: 200 18px sans-serif;
+    color: #788084;
+    width: 540px;
+    border: 20px solid #a8ccd5;
+    border-bottom: 35px solid #a8ccd5;
     background-color: #fff;
-    margin: 0 auto;
-}
-
-.form--main h1,h2 {
-    color: #4169E1;
-}
-
-.form--main h1 {
-    font-size: 23px;
-    font-weight: 600;
-}
-
-.form--main h2 {
-    background-color: #fff;
-    font-size: 18px;
-    font-weight: 400;
+    margin: 10% auto;
+    padding: 18px;
 }
 
 .form--main header {
-    border-bottom: 1px solid #4169E1;
+    padding: 10px;
+    margin-bottom: 5%;
+    font-size: 14px;
 }
 
-.form--main header p {
-    margin-bottom: 5px;
+.form--main h1,h2 {
+    color: #4f8ece;
 }
 
-.form__label {
+.form--main h1 {
+    font-size: 37px;
+    font-weight: 400;
+}
+
+.form--body {
+    border-top: 1px solid #a8ccd5;
+    padding: 10px;
+}
+
+label {
     display: block;
 }
 
-.form__label:after {
+label:after {
     content: ":";
 }
 
-.form--section {
-    background-color: #eee;
-    margin-top: 4%;
-    padding-bottom: 2%;
+.form--section__field {
+    background-color: #f2f3f4;
+    border-radius: 3px;
+    padding: 20px;
+}
+
+.form--section h2 {
+    margin-top: 5%;
+    font-size: 20px;
+    font-weight: 400;
 }
 
 .form--section label {
+    font-size: 14px;
     margin: 2%;
 }
 
@@ -118,16 +130,14 @@ html {
 }
 
 .form--section input {
-    border: 2px solid #79aae1;
+    border: 2px solid #a8ccd5;
     border-radius: 3px;
-    padding: 1%;
+    padding: 1.5%;
 }
 
-img {
-
-    width: 24px;
-    height: 24px;
-    margin-top: 2px;
+.form--section__card-image {
+    width: 40px;
+    height: 25px;
 }
 
 .block_element {
@@ -150,22 +160,8 @@ img {
 }
 
 .btn--info {
-    background-color: #4169E1;
-    border-color: #4169E1;
-}
-
-#web-address {
-    float: left;
-    border-right: 1px solid #eee;
-    width: 60%;
-    outline: none;
-}
-
-#extension {
-    margin-left: -20px;
-    width: 40%;
-    text-align: right;
-    border-left: 1px solid #eee;
+    background-color: #4f8ece;
+    border-color: #4f8ece;
 }
 
 .left {
@@ -177,6 +173,23 @@ img {
     float: right;
     margin-top: 7%;
     margin-right: 4%;
+}
+
+#descriptionParagraph {
+    display: none;
+}
+
+#web-address {
+    border-right: 1px solid #eee;
+    width: 60%;
+    outline: none;
+}
+
+#extension {
+    margin-left: -20px;
+    width: 40%;
+    text-align: right;
+    border-left: 1px solid #eee;
 }
 
 #right {

@@ -2,9 +2,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Payment Form</title>
-    <!--<link type="text/css" rel="stylesheet" href="src/stylesheets/stylesheet.css"/>
+    <link type="text/css" rel="stylesheet" href="src/stylesheets/stylesheet.css"/>
     <script src="http://code.jquery.com/jquery-2.2.2.min.js"></script>
-    <script src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.min.js"></script>-->
+    <!--<script src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.min.js"></script>-->
 </head>
 <body>
 <section class="form--main">
@@ -12,45 +12,49 @@
         <h1>Sign Up Now</h1>
         <p>Pick your new website, free forever.</p>
     </header>
-    <form class="form form--payment" id="paymentValidation">
+    <form class="form--body" id="paymentValidation">
         <ol class="form--section">
             <li>
                 <h2>Pick a website address.</h2>
-                <label class="form__label" for="web-address">Website address</label>
-                <input class="form__input block_inline" type="text" name="web-address" aria-describedby="descriptionParagraph" id="web-address" aria-required="true" aria-label="Address name" placeholder="domain name" tabindex="1" required>.free.websites.com
-                <p id="descriptionParagraph">Enter preferred name for your free domain that will have .free.websites.com extension.</p>
+                <div class="form--section__field">
+                    <label class="form__label" for="web-address">Website address</label>
+                    <input class="form__input block_inline" type="text" name="web-address" aria-describedby="descriptionParagraph" id="web-address" aria-required="true" aria-label="Address name" placeholder="Domain Name" tabindex="1" required>.free.websites.com
+                    <p id="descriptionParagraph">Enter preferred name for your free domain that will have .free.websites.com extension.</p>
+                </div>
             </li>
 
             <li>
                 <h2>Create an account.</h2>
+                <div class="form--section__field">
+                    <label class="form__label" for="fullName">Full name</label>
+                    <input class="form__input block_element" type="text" name="fullName" id="fullName" aria-required="true" aria-label="Full name" placeholder="Full Name" tabindex="2" required>
 
-                <label class="form__label" for="fullName">Full name</label>
-                <input class="form__input block_element" type="text" name="fullName" id="fullName" aria-required="true" aria-label="Full name" placeholder="Firstame Lastname" tabindex="2" required>
+                    <label class="form__label" for="emailAdd">Email address</label>
+                    <input class="form__input block_element" type="email" name="emailAddress" id="emailAdd" aria-required="true" aria-label="Email address" placeholder="E-mail" tabindex="3" required>
 
-                <label class="form__label" for="emailAdd">Email address</label>
-                <input class="form__input block_element" type="email" name="emailAddress" id="emailAdd" aria-required="true" aria-label="Email address" placeholder="email" tabindex="3" required>
+                    <label class="form__label" for="passwrd">Password</label>
+                    <input class="form__input block_element" type="password" name="password" id="passwrd" aria-required="true" aria-label="Password" placeholder="Password" tabindex="4" required>
 
-                <label class="form__label" for="passwrd">Password</label>
-                <input class="form__input block_element" type="password" name="password" id="passwrd" aria-required="true" aria-label="Password" placeholder="password" tabindex="4" required>
-
-                <input class="form__input inline_element" type="checkbox" name="reveal" aria-label="Reveal password" id="password" tabindex="5"> Reveal Password
+                    <input class="form__input inline_element" type="checkbox" name="reveal" aria-label="Reveal password" id="password" tabindex="5"> Reveal Password
+                </div>
             </li>
 
             <li>
-                <h2>Payment info.</h2>
+                <h2>Enter your payment info.</h2>
+                <div class="form--section__field">
+                    <label class="block_element">Credit card number</label>
+                    <input type="text" name="cardNumber" id="cardNumber" placeholder="Credit Card Number" tabindex="6" required>
+                    <img class="form--section__card-image" src="src/img/CCVisa.png" height="25" width="40" alt="visa">
+                    <img class="form--section__card-image" src="src/img/CCMasterCard.png" height="25" width="40" alt="maestro">
+                    <img class="form--section__card-image" src="src/img/CCDiscover.png" height="25" width="40" alt="discover">
+                    <img class="form--section__card-image" src="src/img/CCAmerican.png" height="25" width="40" alt="american">
 
-                <label class="block_element">Card number</label>
-                <input type="text" name="cardNumber" id="cardNumber" required>
-                <img src="src/images/Visa.png" height="24" width="24" alt="visa">
-                <img src="src/images/Maestro.png" height="24" width="24" alt="maestro">
-                <img src="src/images/Discover.png" height="24" width="24" alt="discover">
-                <img src="src/images/American.png" height="24" width="24" alt="american">
-
-                <label for="secCode">Security code</label>
-                <input type="text" name="securityCode" id="secCode" aria-required="true" aria-label="Security code" tabindex="7" required>
-                <label for="expMonth">Expiration date</label>
-                <input type="number" name="expMonth" id="expMonth" aria-label="Expiration month" min="1" max="12" tabindex="8">
-                <input type="number" name="expYear" id="expirationYear" aria-label="Expiration year" min="2000" max="2020" tabindex="9" required>
+                    <label for="secCode">Security code</label>
+                    <input type="text" name="securityCode" id="secCode" aria-required="true" aria-label="Security code" placeholder="Security Code" tabindex="7"  required>
+                    <label for="expMonth">Expiration date</label>
+                    <input type="number" name="expMonth" id="expMonth" aria-label="Expiration month" min="1" max="12" tabindex="8">
+                    <input type="number" name="expYear" id="expirationYear" aria-label="Expiration year" min="2000" max="2020" tabindex="9" required>
+                </div>
             </li>
         </ol>
 

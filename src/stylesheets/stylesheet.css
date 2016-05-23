@@ -64,9 +64,13 @@ html {
 *,
 * :before,
 * :after {
-    -webkit-box-sizing: inherit;
-    -moz-box-sizing:    inherit;
-    box-sizing:         inherit;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing:    border-box;
+    box-sizing:         border-box;
+}
+
+.font--small {
+    font-size: 12px;
 }
 
 .form--main {
@@ -76,7 +80,7 @@ html {
     border: 20px solid #a8ccd5;
     border-bottom: 35px solid #a8ccd5;
     background-color: #fff;
-    margin: 10% auto;
+    margin: 0 auto;
     padding: 18px;
 }
 
@@ -114,6 +118,22 @@ label:after {
     padding: 20px;
 }
 
+.form--section__field--website {
+    position: relative;
+}
+
+.form--section__field--website span {
+    position: absolute;
+    top: 52%;
+    left: 60%;
+    padding-top: 1.5%;
+    height: 28%;
+    width: 32.3%;
+    text-align: center;
+    background-color: #f2f3f4;
+    font-size: 15px;
+}
+
 .form--section h2 {
     margin-top: 5%;
     font-size: 20px;
@@ -132,12 +152,44 @@ label:after {
 .form--section input {
     border: 2px solid #a8ccd5;
     border-radius: 3px;
-    padding: 1.5%;
+    padding: 8px;
 }
 
 .form--section__card-image {
-    width: 40px;
-    height: 25px;
+    width: 40%;
+    margin-top: 5px;
+    display: inline-block;
+}
+
+.form--section__card-image img {
+    width: 35px;
+    height: 20px;
+}
+
+.form--section_card-securityCode {
+    width: 35%;
+    padding-left: 4px;
+    display: inline-block;
+}
+
+.form--section_card-securityCode input {
+    width: 100%;
+}
+
+.form--section_card-expirationDate {
+    width: 60%;
+    margin-top: 2%;
+    margin-left: 3.5%;
+    display: inline-block;
+}
+
+.form--section_card-expirationDate input {
+    width: 60%
+}
+
+.form--section_card-expirationDate input:nth-child(3) {
+    width: 30%;
+    margin-left: 1%;
 }
 
 .block_element {
@@ -153,8 +205,7 @@ label:after {
     width: 100%;
     margin-top: 2%;
     color: #fff;
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 18px;
     border: 1px solid;
     padding: 2%;
 }
@@ -162,6 +213,10 @@ label:after {
 .btn--info {
     background-color: #4f8ece;
     border-color: #4f8ece;
+}
+
+.card--inactive {
+    opacity: 0.3;
 }
 
 .left {
@@ -179,12 +234,6 @@ label:after {
     display: none;
 }
 
-#web-address {
-    border-right: 1px solid #eee;
-    width: 60%;
-    outline: none;
-}
-
 #extension {
     margin-left: -20px;
     width: 40%;
@@ -196,24 +245,15 @@ label:after {
     margin-left: 60%;
 }
 
-#secCode {
-    width: 50%;
-    margin-top: 1px;
-}
-
-#month {
-
-    width: 10%;
-}
-
-#year {
-    width: 20%;
-}
-
 #li_left {
     float: left;
 }
 
 #li_right {
     margin-left: 20%;
+}
+
+#cardNumber {
+    vertical-align: top;
+    width: 55%;
 }

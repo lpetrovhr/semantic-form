@@ -16,9 +16,9 @@
         <ol class="form--section">
             <li>
                 <h2>Pick a website address.</h2>
-                <div class="form--section__field">
+                <div class="form--section__field form--section__field--website">
                     <label class="form__label" for="web-address">Website address</label>
-                    <input class="form__input block_inline" type="text" name="web-address" aria-describedby="descriptionParagraph" id="web-address" aria-required="true" aria-label="Address name" placeholder="Domain Name" tabindex="1" required>.free.websites.com
+                    <input class="form__input block_element" type="text" name="web-address" aria-describedby="descriptionParagraph" id="web-address" aria-required="true" aria-label="Address name" placeholder="Domain Name" tabindex="1" required> <span>.free.websites.com</span>
                     <p id="descriptionParagraph">Enter preferred name for your free domain that will have .free.websites.com extension.</p>
                 </div>
             </li>
@@ -35,7 +35,7 @@
                     <label class="form__label" for="passwrd">Password</label>
                     <input class="form__input block_element" type="password" name="password" id="passwrd" aria-required="true" aria-label="Password" placeholder="Password" tabindex="4" required>
 
-                    <input class="form__input inline_element" type="checkbox" name="reveal" aria-label="Reveal password" id="password" tabindex="5"> Reveal Password
+                    <input class="form__input inline_element" type="checkbox" name="reveal" aria-label="Reveal password" id="password" tabindex="5"> <span class="font--small">Reveal password</span>
                 </div>
             </li>
 
@@ -43,17 +43,23 @@
                 <h2>Enter your payment info.</h2>
                 <div class="form--section__field">
                     <label class="block_element">Credit card number</label>
-                    <input type="text" name="cardNumber" id="cardNumber" placeholder="Credit Card Number" tabindex="6" required>
-                    <img class="form--section__card-image" src="src/img/CCVisa.png" height="25" width="40" alt="visa">
-                    <img class="form--section__card-image" src="src/img/CCMasterCard.png" height="25" width="40" alt="maestro">
-                    <img class="form--section__card-image" src="src/img/CCDiscover.png" height="25" width="40" alt="discover">
-                    <img class="form--section__card-image" src="src/img/CCAmerican.png" height="25" width="40" alt="american">
-
+                    <input type="text" name="cardNumber" id="cardNumber" placeholder="Credit Card Number" tabindex="6"
+                        required>
+                    <div class="form--section__card-image">
+                        <img id="visa" class="card--inactive" src="src/img/CCVisa.png" alt="visa">
+                        <img id="maestro" class="card--inactive" src="src/img/CCMasterCard.png" alt="maestro">
+                        <img id="discover" class="card--inactive" src="src/img/CCDiscover.png" alt="discover">
+                        <img id="american" class="card--inactive" src="src/img/CCAmerican.png" alt="american">
+                    </div>
+                    <div class="form--section_card-securityCode">
                     <label for="secCode">Security code</label>
-                    <input type="text" name="securityCode" id="secCode" aria-required="true" aria-label="Security code" placeholder="Security Code" tabindex="7"  required>
+                        <input type="text" name="securityCode" id="secCode" aria-required="true" aria-label="Security code" placeholder="Security Code" tabindex="7"  required>
+                    </div>
+                    <div class="form--section_card-expirationDate">
                     <label for="expMonth">Expiration date</label>
-                    <input type="number" name="expMonth" id="expMonth" aria-label="Expiration month" min="1" max="12" tabindex="8">
-                    <input type="number" name="expYear" id="expirationYear" aria-label="Expiration year" min="2000" max="2020" tabindex="9" required>
+                        <input type="number" name="expMonth" id="expMonth" aria-label="Expiration month" min="1" max="12" tabindex="8">
+                        <input type="number" name="expYear" id="expirationYear" aria-label="Expiration year" min="2000" max="2020" tabindex="9" required>
+                    </div>
                 </div>
             </li>
         </ol>

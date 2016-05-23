@@ -4,6 +4,7 @@
     <title>Payment Form</title>
     <link type="text/css" rel="stylesheet" href="src/stylesheets/stylesheet.css"/>
     <script src="http://code.jquery.com/jquery-2.2.2.min.js"></script>
+    <script src="src/scripts/jquery.creditCardValidator.js"></script>
     <!--<script src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.min.js"></script>-->
 </head>
 <body>
@@ -47,9 +48,9 @@
                         required>
                     <div class="form--section__card-image">
                         <img id="visa" class="card--inactive" src="src/img/CCVisa.png" alt="visa">
-                        <img id="maestro" class="card--inactive" src="src/img/CCMasterCard.png" alt="maestro">
+                        <img id="mastercard" class="card--inactive" src="src/img/CCMasterCard.png" alt="mastercard">
                         <img id="discover" class="card--inactive" src="src/img/CCDiscover.png" alt="discover">
-                        <img id="american" class="card--inactive" src="src/img/CCAmerican.png" alt="american">
+                        <img id="american" class="card--inactive" src="src/img/CCAmerican.png" alt="amex">
                     </div>
                     <div class="form--section_card-securityCode">
                     <label for="secCode">Security code</label>
@@ -67,5 +68,20 @@
         <button class="btn btn--info" type="submit" name="submit" aria-label="Submit form button" tabindex="10">Create your website</button>
     </form>
 </section>
+<script>
+    $(function() {
+        var lastEl;
+        $('#cardNumber').validateCreditCard(function(result) {
+            if (result.card_type == null ) { if (lastEl === null) {}
+                else {document.getElementById(lastEl).style.opacity = '0.4';} }
+            if (result.card_type.name === 'visa') { document.getElementById('visa').style.opacity = '1'; lastEl = 'visa'}
+            if (result.card_type.name === 'amex') { document.getElementById('amex').style.opacity = '1'; lastEl = 'amex'}
+            if (result.card_type.name === 'mastercard') { document.getElementById('mastercard').style.opacity = '1';
+                lastEl = 'mastercard'}
+            if (result.card_type.name === 'discover') { document.getElementById('discover').style.opacity = '1';
+                lastEl = 'discover'}
+        });
+    });
+</script>
 </body>
 </html>

@@ -68,20 +68,6 @@
         <button class="btn btn--info" type="submit" name="submit" aria-label="Submit form button" tabindex="10">Create your website</button>
     </form>
 </section>
-<script>
-    $(function() {
-        var lastEl;
-        $('#cardNumber').validateCreditCard(function(result) {
-            if (result.card_type == null ) { if (lastEl === null) {}
-                else {document.getElementById(lastEl).style.opacity = '0.4';} }
-            if (result.card_type.name === 'visa') { document.getElementById('visa').style.opacity = '1'; lastEl = 'visa'}
-            if (result.card_type.name === 'amex') { document.getElementById('amex').style.opacity = '1'; lastEl = 'amex'}
-            if (result.card_type.name === 'mastercard') { document.getElementById('mastercard').style.opacity = '1';
-                lastEl = 'mastercard'}
-            if (result.card_type.name === 'discover') { document.getElementById('discover').style.opacity = '1';
-                lastEl = 'discover'}
-        });
-    });
-</script>
+<script type='text/javascript' src='src/scripts/validation.js'></script>
 </body>
 </html>

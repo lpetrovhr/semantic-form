@@ -5,6 +5,7 @@
     <link type="text/css" rel="stylesheet" href="src/stylesheets/stylesheet.css"/>
     <script src="http://code.jquery.com/jquery-2.2.2.min.js"></script>
     <script src="src/scripts/jquery.creditCardValidator.js"></script>
+    <script src="src/scripts/jquery.validate.min.js"></script>
     <!--<script src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.min.js"></script>-->
 </head>
 <body>
@@ -15,11 +16,14 @@
     </header>
     <form class="form--body" id="paymentValidation">
         <ol class="form--section">
-            <li>
+            <li class="form--section-website">
                 <h2>Pick a website address.</h2>
                 <div class="form--section__field form--section__field--website">
-                    <label class="form__label" for="web-address">Website address</label>
-                    <input class="form__input block_element" type="text" name="web-address" aria-describedby="descriptionParagraph" id="web-address" aria-required="true" aria-label="Address name" placeholder="Domain Name" tabindex="1" required> <span>.free.websites.com</span>
+                    <label class="form--label" for="webAddress">Website address</label>
+                    <div style="position: relative;">
+                        <input class="form__input block_element" type="text" name="webAddress" aria-describedby="descriptionParagraph" id="webAddress" aria-required="true" aria-label="Address name" placeholder="Domain Name" tabindex="1" required>
+                        <span>.free.websites.com</span>
+                    </div>
                     <p id="descriptionParagraph">Enter preferred name for your free domain that will have .free.websites.com extension.</p>
                 </div>
             </li>
@@ -27,14 +31,14 @@
             <li>
                 <h2>Create an account.</h2>
                 <div class="form--section__field">
-                    <label class="form__label" for="fullName">Full name</label>
+                    <label class="form--label" for="fullName">Full name</label>
                     <input class="form__input block_element" type="text" name="fullName" id="fullName" aria-required="true" aria-label="Full name" placeholder="Full Name" tabindex="2" required>
 
-                    <label class="form__label" for="emailAdd">Email address</label>
-                    <input class="form__input block_element" type="email" name="emailAddress" id="emailAdd" aria-required="true" aria-label="Email address" placeholder="E-mail" tabindex="3" required>
+                    <label class="form--label" for="emailAdd">Email address</label>
+                    <input class="form__input block_element" type="email" name="emailAdd" id="emailAdd" aria-required="true" aria-label="Email address" placeholder="E-mail" tabindex="3" required>
 
-                    <label class="form__label" for="passwrd">Password</label>
-                    <input class="form__input block_element" type="password" name="password" id="passwrd" aria-required="true" aria-label="Password" placeholder="Password" tabindex="4" required>
+                    <label class="form--label" for="passwrd">Password</label>
+                    <input class="form__input block_element" type="password" name="passwrd" id="passwrd" aria-required="true" aria-label="Password" placeholder="Password" tabindex="4" required>
 
                     <input class="form__input inline_element" type="checkbox" name="reveal" aria-label="Reveal password" id="password" tabindex="5"> <span class="font--small">Reveal password</span>
                 </div>
@@ -43,9 +47,11 @@
             <li>
                 <h2>Enter your payment info.</h2>
                 <div class="form--section__field">
-                    <label class="block_element">Credit card number</label>
+                    <div class="form--section__card-number">
+                    <label class="form--label block_element">Credit card number</label>
                     <input type="text" name="cardNumber" id="cardNumber" placeholder="Credit Card Number" tabindex="6"
                         required>
+                    </div>
                     <div class="form--section__card-image">
                         <img id="visa" class="card--inactive" src="src/img/CCVisa.png" alt="visa">
                         <img id="mastercard" class="card--inactive" src="src/img/CCMasterCard.png" alt="mastercard">
@@ -53,13 +59,13 @@
                         <img id="american" class="card--inactive" src="src/img/CCAmerican.png" alt="amex">
                     </div>
                     <div class="form--section_card-securityCode">
-                    <label for="secCode">Security code</label>
-                        <input type="text" name="securityCode" id="secCode" aria-required="true" aria-label="Security code" placeholder="Security Code" tabindex="7"  required>
+                        <label class="form--label" for="secCode">Security code</label>
+                        <input type="text" name="secCode" name="secCode" id="secCode" aria-required="true" aria-label="Security code" placeholder="Security Code" tabindex="7" required>
                     </div>
                     <div class="form--section_card-expirationDate">
-                    <label for="expMonth">Expiration date</label>
-                        <input type="number" name="expMonth" id="expMonth" aria-label="Expiration month" min="1" max="12" tabindex="8">
-                        <input type="number" name="expYear" id="expirationYear" aria-label="Expiration year" min="2000" max="2020" tabindex="9" required>
+                        <label class="form--label" for="expMonth">Expiration date</label>
+                        <input type="number" name="expMonth" id="expMonth" aria-label="Expiration month" min="1" max="12" tabindex="8" required>
+                        <input type="number" name="expirationYear" id="expirationYear" aria-label="Expiration year" min="2000" max="2020" tabindex="9" required>
                     </div>
                 </div>
             </li>
@@ -69,5 +75,40 @@
     </form>
 </section>
 <script type='text/javascript' src='src/scripts/validation.js'></script>
+<script>
+    $('#paymentValidation').validate({
+        rules: {
+            webAddress: 'required',
+            fullName: 'required',
+            emailAdd: {
+                required: true,
+                email: true
+            },
+            passwrd: 'required',
+            cardNumber: 'required',
+            secCode: 'required',
+            expMonth: 'required',
+            expirationYear: 'required'
+        },
+        messages: {
+            webAddress: 'Enter website name',
+            fullName: 'Enter your full name',
+            emailAdd: 'Enter correct email',
+            passwrd: 'Password is required',
+            cardNumber: 'Enter credit card number',
+            secCode: 'Enter security code',
+            expirationYear: 'Enter expiration year',
+            expMonth: 'Enter expiration month'
+        },
+        errorPlacement: function (error, element) {
+            error.addClass('error--message_style');
+            if(element.attr('name') == 'expMonth') {
+                error.insertAfter('#expirationYear');
+            } else {
+                error.insertAfter(element);
+            }
+        }
+    });
+</script>
 </body>
 </html>

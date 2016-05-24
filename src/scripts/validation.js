@@ -7,7 +7,6 @@ $(function() {
     } else {
         document.getElementById(result.card_type.name).style.opacity = '1';
         lastEl = result.card_type.name;
-
       }
   }, { accept: ['visa', 'mastercard', 'discover', 'amex'] });
 });

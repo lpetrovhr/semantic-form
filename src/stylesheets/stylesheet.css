@@ -118,10 +118,10 @@ label:after {
 
 .form--section__field--website span{
     position: absolute;
-    top: 2px;
     left: 55.3%;
+    top: 2px;
     padding-top: 1.3%;
-    height: 29px;
+    height: 90%;
     width: 40%;
     text-align: center;
     background-color: #f2f3f4;
@@ -154,14 +154,15 @@ label:after {
     margin: 20px 0 1% 1%;
 }
 
-.form--section input {
-    margin-left: 3px;
+.form--section_checkbox {
+    border: none;
 }
 
-.form--section input {
+.form__input {
     border: 2px solid #a8ccd5;
     border-radius: 3px;
     padding: 8px;
+    margin-left: 3px;
 }
 
 .form--section__card-number {

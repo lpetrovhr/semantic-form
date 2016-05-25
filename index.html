@@ -3,11 +3,13 @@
   <meta charset="UTF-8">
   <title>Payment Form</title>
   <link type="text/css" rel="stylesheet" href="src/stylesheets/stylesheet.css"/>
-  <script src="http://code.jquery.com/jquery-2.2.2.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.7/es5-shim.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.8.3.min.js" integrity="sha256-YcbK69I5IXQftf/mYD8WY0/KmEDCv1asggHpJk1trM8=" crossorigin="anonymous"></script>
   <script src="src/scripts/jquery.creditCardValidator.js"></script>
   <script src="src/scripts/jquery.validate.min.js"></script>
-  <script src="src/scripts/masked.js"></script>
-  <!--<script src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.min.js"></script>-->
+  <!--[if lt IE 9]>
+   <script src="src/scripts/iexplorer.js"></script>
+  <![endif]-->
 </head>
 <body>
 <section class="form--main">
@@ -40,7 +42,7 @@
           <label class="form--label" for="passwrd">Password</label>
           <input class="form__input block_element" type="password" name="passwrd" id="passwrd" aria-required="true" aria-label="Password" placeholder="Password" tabindex="4" required>
           <div class="form--section__check">
-            <input class="form__input inline_element" type="checkbox" name="reveal" aria-label="Reveal password" id="password" tabindex="5">
+            <input class="form--section_checkbox" type="checkbox" name="reveal" aria-label="Reveal password" id="password" tabindex="5">
             <span class="font--small">Reveal password</span>
           </div>
         </div>
@@ -50,7 +52,7 @@
         <div class="form--section__field">
           <div class="form--section__card-number">
             <label class="form--label-first block_element">Credit card number</label>
-            <input type="text" name="cardNumber" id="cardNumber"
+            <input class="form__input" type="text" name="cardNumber" id="cardNumber"
               placeholder="Credit Card Number" tabindex="6" required>
           </div>
           <div class="form--section__card-image">
@@ -61,7 +63,7 @@
           </div>
           <div class="form--section_card-securityCode">
             <label class="form--label" for="secCode">Security code</label>
-            <input type="text" name="secCode" name="secCode" id="secCode" aria-required="true" aria-label="Security code" placeholder="Security Code" tabindex="7" required>
+            <input class="form__input" type="text" name="secCode" name="secCode" id="secCode" aria-required="true" aria-label="Security code" placeholder="Security Code" tabindex="7" required>
           </div>
             <div class="form--section_card-expirationDate">
               <label class="form--label" for="expMonth">Expiration date</label>
@@ -92,6 +94,6 @@
     <button class="btn btn--info" type="submit" name="submit" aria-label="Submit form button" tabindex="10">Create your website</button>
   </form>
 </section>
-<script type='text/javascript' src='src/scripts/validate.js'></script>
+<!--[if lte IE 9]><script type='text/javascript' src='src/scripts/validate.js'></script><![endif]-->
 </body>
 </html>

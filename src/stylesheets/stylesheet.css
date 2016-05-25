@@ -76,7 +76,7 @@ html {
 .form--main {
     font: 200 18px sans-serif;
     color: #788084;
-    width: 540px;
+    width: 500px;
     border: 20px solid #a8ccd5;
     border-bottom: 35px solid #a8ccd5;
     background-color: #fff;
@@ -144,9 +144,14 @@ label:after {
     font-weight: 400;
 }
 
+.form--label-first {
+    font-size: 14px;
+    margin: 1% 0 1% 1%;
+}
+
 .form--label {
     font-size: 14px;
-    margin: 2%;
+    margin: 20px 0 1% 1%;
 }
 
 .form--section input {
@@ -160,21 +165,20 @@ label:after {
 }
 
 .form--section__card-number {
-    width: 50%;
+    width: 45%;
     vertical-align: top;
     display: inline-block;
 }
 
 .form--section__card-image {
-    width: 40%;
-    margin-top: 6.5%;
-    margin-left: 7%;
+    width: 50%;
+    margin: 6% 0 0 2%;
     display: inline-block;
 }
 
 .form--section__card-image img {
-    width: 35px;
-    height: 20px;
+    width: 40px;
+    height: 25px;
 }
 
 .form--section_card-securityCode {
@@ -190,6 +194,7 @@ label:after {
 
 .form--section_card-expirationDate {
     width: 60%;
+    margin-top: 1%;
     margin-left: 3.5%;
     display: inline-block;
 }
@@ -203,23 +208,17 @@ label:after {
     margin-left: 1%;
 }
 
+.form--section__check {
+    margin-top: 10px;
+    display: inline-block;
+}
+
 .error--message_style {
     font-size: 13px;
-    margin-top: 10px;
-    margin-left: 10px;
-    margin-bottom: 10px;
+    margin: 10px 0 0 5px;
+    height: 10px;
     color: #d0021b;
     font-weight: 500;
-}
-
-.error--message_style:before {
-    content: '!';
-    margin-right: 10px;
-    font-size: 18px;
-}
-
-.error--message_style:after {
-    content: '.';
 }
 
 .block_element {
@@ -249,6 +248,23 @@ label:after {
     opacity: 0.3;
 }
 
+.errorMessageBefore {
+    border-radius: 50%;
+    width: 20px;
+    text-align: center;
+    height: 20px;
+    font-size: 15px;
+    position: absolute;
+    color: #fff;
+    border: 1px solid #d0021b;
+    background-color: #d0021b;
+}
+
+.errorMessage {
+    position: absolute;
+    margin: 3px 0 0 25px;
+}
+
 .left {
     width: 50%;
     float: left;
@@ -256,8 +272,7 @@ label:after {
 
 .right {
     float: right;
-    margin-top: 7%;
-    margin-right: 4%;
+    margin-right: 7% 4% 0 0;
 }
 
 #descriptionParagraph {
@@ -286,4 +301,20 @@ label:after {
 #cardNumber {
     vertical-align: top;
     width: 100%;
+}
+
+#expMonth {
+    width: 50%;
+    height: 30px;
+    background-color: #fff;
+}
+
+#expirationYear {
+    width: 43%;
+    height: 30px;
+    background-color: #fff;
+}
+
+#creditCardNumberError {
+    display: none;
 }

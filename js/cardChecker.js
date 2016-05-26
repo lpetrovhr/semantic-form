@@ -16,3 +16,19 @@ $(function() {
     }
   }, { accept: ['visa', 'mastercard', 'discover', 'amex'] });
 });
+
+$('form').submit(function(e){
+  var shity = false;
+  $('#cardNumber').validateCreditCard(function(result) {
+    if(!result.length_valid) {
+      document.getElementById('creditCardNumberError').style.display = 'inline-block';
+      document.getElementById('cardNumber').setAttribute('aria-describedby', 'creditCardNumberError');
+      shity = true;
+    }
+  }, { accept: ['visa', 'mastercard', 'discover', 'amex'] });
+
+  if(shity) {
+    e.preventDefault();
+    document.getElementById('cardNumber').focus();
+  }
+});

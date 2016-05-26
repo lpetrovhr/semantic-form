@@ -317,6 +317,10 @@ label:after {
     background-color: #fff;
 }
 
+#creditCardNumberAria {
+    display: none;
+}
+
 #creditCardNumberError {
     display: none;
     width: 100%;

@@ -58,7 +58,7 @@
         <div class="form--section__field">
           <div class="form--section__card-number">
             <label class="form--label-first block_element">Credit card number</label>
-            <input class="form__input" type="text" name="cardNumber" id="cardNumber"
+            <input class="form__input" aria-describedby="creditCardNumberAria" type="text" name="cardNumber" id="cardNumber"
               placeholder="Credit Card Number" tabindex="6" required>
           </div>
           <div class="form--section__card-image">
@@ -67,6 +67,8 @@
             <img id="discover" class="card--inactive" src="img/CCDiscover.png" alt="discover">
             <img id="amex" class="card--inactive" src="img/CCAmerican.png" alt="amex">
           </div>
+          <p id="creditCardNumberAria">Enter your credit card number</p>
+          <p class="error--message_style" id="creditCardNumberError">You didn't entered a valid card number.</p>
           <div class="form--section_card-securityCode">
             <label class="form--label" for="secCode">Security code</label>
             <input class="form__input" type="text" name="secCode" name="secCode" id="secCode" aria-required="true"
@@ -99,7 +101,7 @@
           </div>
       </li>
     </ol>
-    <button class="btn btn--info" type="submit" name="submit" aria-label="Submit form button" tabindex="10">
+    <button class="btn btn--info" type="submit" id="submit" name="submit" aria-label="Submit form button" tabindex="10">
       Create your website
     </button>
   </form>

@@ -65,8 +65,9 @@
             <img id="visa" class="card--inactive" src="img/CCVisa.png" alt="visa">
             <img id="mastercard" class="card--inactive" src="img/CCMasterCard.png" alt="mastercard">
             <img id="discover" class="card--inactive" src="img/CCDiscover.png" alt="discover">
-            <img id="american" class="card--inactive" src="img/CCAmerican.png" alt="amex">
+            <img id="amex" class="card--inactive" src="img/CCAmerican.png" alt="amex">
           </div>
+          <p class="error--message_style" id="creditCardNumberError">You didn't entered a valid card number.</p>
           <div class="form--section_card-securityCode">
             <label class="form--label" for="secCode">Security code</label>
             <input class="form__input" type="text" name="secCode" name="secCode" id="secCode" aria-required="true"
@@ -74,7 +75,7 @@
           </div>
             <div class="form--section_card-expirationDate">
               <label class="form--label" for="expMonth">Expiration date</label>
-              <select id="expMonth" name="expMonth" title="ExpirationMonth" aria-label="Expiration month" tabindex="12">
+              <select id="expMonth" name="expMonth" title="ExpirationMonth" aria-label="Expiration month" tabindex="8">
                 <option value="01">01 - January</option>
                 <option value="02">02 - February</option>
                 <option value="03">03 - March</option>
@@ -88,7 +89,8 @@
                 <option value="11">11 - November</option>
                 <option value="12">12 - December</option>
                </select>
-               <select id="expirationYear" name="expirationYear" title="ExpirationYear" aria-label="Expiration year">
+               <select id="expirationYear" name="expirationYear" title="ExpirationYear" aria-label="Expiration year"
+                tabindex="9">
                 <option value="2016" selected="selected">2016</option>
                 <option value="2017">2017</option>
                 <option value="2018">2018</option>

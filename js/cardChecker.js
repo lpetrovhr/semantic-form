@@ -1,7 +1,8 @@
 $(function() {
+  document.getElementById('creditCardNumberError').style.display = 'none';
   var lastEl;
   $('#cardNumber').validateCreditCard(function(result) {
-    if (result.card_type == null ) {
+    if (result.card_type == null || !result.length_valid) {
       if (lastEl == null) {}
       else {
         var lastElement = document.getElementById(lastEl);

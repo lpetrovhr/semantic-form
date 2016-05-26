@@ -1,18 +1,14 @@
 $('#paymentValidation').validate({
   rules: {
-    webAddress: {
-      required: true
-    },
-    fullName: 'required',
+    webAddress: { required: true },
+    fullName: { required: true },
     emailAdd: {
       required: true,
       email: true
     },
-    passwrd: {
-      required: true
-    },
-    cardNumber: {required:true},
-    secCode: {required:true}
+    passwrd: { required: true },
+    cardNumber: { required:true },
+    secCode: { required:true }
     },
     messages: {
     webAddress: '<i class="errorMessageBefore">!</i><i class="errorMessage">Enter website name.</i>',

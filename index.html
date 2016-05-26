@@ -2,13 +2,13 @@
 <head>
   <meta charset="UTF-8">
   <title>Payment Form</title>
-  <link type="text/css" rel="stylesheet" href="resources/stylesheets/stylesheet.css"/>
+  <link type="text/css" rel="stylesheet" href="css/stylesheet.css"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.7/es5-shim.min.js"></script>
   <script src="https://code.jquery.com/jquery-1.8.3.min.js" integrity="sha256-YcbK69I5IXQftf/mYD8WY0/KmEDCv1asggHpJk1trM8=" crossorigin="anonymous"></script>
-  <script src="resources/scripts/jquery.creditCardValidator.js"></script>
-  <script src="resources/scripts/jquery.validate.min.js"></script>
+  <script src="js/vendors/jquery.creditCardValidator.js"></script>
+  <script src="js/vendors/jquery.validate.min.js"></script>
   <!--[if lt IE 9]>
-   <script src="src/scripts/iexplorer.js"></script>
+   <script src="js/ieCreateElements.js"></script>
   <![endif]-->
 </head>
 <body>
@@ -24,7 +24,9 @@
           <div class="form--section__field form--section__field--website">
             <label class="form--label-first" for="webAddress">Website address</label>
             <div style="position: relative;">
-              <input class="form__input block_element" type="text" name="webAddress" aria-describedby="descriptionParagraph" id="webAddress" aria-required="true" aria-label="Address name" placeholder="Domain Name" tabindex="1" required>
+              <input class="form__input block_element" type="text" name="webAddress"
+                aria-describedby="descriptionParagraph" id="webAddress" aria-required="true" aria-label="Address name"
+                placeholder="Domain Name" tabindex="1" required>
                   <span>.free.websites.com</span>
             </div>
             <p id="descriptionParagraph">Enter preferred name for your free domain that will have .free.websites.com extension.</p>
@@ -34,15 +36,17 @@
         <h2>Create an account.</h2>
         <div class="form--section__field">
           <label class="form--label-first" for="fullName">Full name</label>
-          <input class="form__input block_element" type="text" name="fullName" id="fullName" aria-required="true" aria-label="Full name" placeholder="Full Name" tabindex="2" required>
-
+          <input class="form__input block_element" type="text" name="fullName" id="fullName" aria-required="true"
+            aria-label="Full name" placeholder="Full Name" tabindex="2" required>
           <label class="form--label" for="emailAdd">Email address</label>
-          <input class="form__input block_element" type="email" name="emailAdd" id="emailAdd" aria-required="true" aria-label="Email address" placeholder="E-mail" tabindex="3" required>
-
+          <input class="form__input block_element" type="email" name="emailAdd" id="emailAdd" aria-required="true"
+            aria-label="Email address" placeholder="E-mail" tabindex="3" required>
           <label class="form--label" for="passwrd">Password</label>
-          <input class="form__input block_element" type="password" name="passwrd" id="passwrd" aria-required="true" aria-label="Password" placeholder="Password" tabindex="4" required>
+          <input class="form__input block_element" type="password" name="passwrd" id="passwrd" aria-required="true"
+            aria-label="Password" placeholder="Password" tabindex="4" required>
           <div class="form--section__check">
-            <input class="form--section_checkbox" type="checkbox" name="reveal" aria-label="Reveal password" id="password" tabindex="5">
+            <input class="form--section_checkbox" type="checkbox" name="reveal" aria-label="Reveal password"
+              id="password" tabindex="5">
             <span class="font--small">Reveal password</span>
           </div>
         </div>
@@ -56,14 +60,15 @@
               placeholder="Credit Card Number" tabindex="6" required>
           </div>
           <div class="form--section__card-image">
-            <img id="visa" class="card--inactive" src="src/img/CCVisa.png" alt="visa">
-            <img id="mastercard" class="card--inactive" src="src/img/CCMasterCard.png" alt="mastercard">
-            <img id="discover" class="card--inactive" src="src/img/CCDiscover.png" alt="discover">
-            <img id="american" class="card--inactive" src="src/img/CCAmerican.png" alt="amex">
+            <img id="visa" class="card--inactive" src="img/CCVisa.png" alt="visa">
+            <img id="mastercard" class="card--inactive" src="img/CCMasterCard.png" alt="mastercard">
+            <img id="discover" class="card--inactive" src="img/CCDiscover.png" alt="discover">
+            <img id="american" class="card--inactive" src="img/CCAmerican.png" alt="amex">
           </div>
           <div class="form--section_card-securityCode">
             <label class="form--label" for="secCode">Security code</label>
-            <input class="form__input" type="text" name="secCode" name="secCode" id="secCode" aria-required="true" aria-label="Security code" placeholder="Security Code" tabindex="7" required>
+            <input class="form__input" type="text" name="secCode" name="secCode" id="secCode" aria-required="true"
+              aria-label="Security code" placeholder="Security Code" tabindex="7" required>
           </div>
             <div class="form--section_card-expirationDate">
               <label class="form--label" for="expMonth">Expiration date</label>
@@ -91,9 +96,12 @@
           </div>
       </li>
     </ol>
-    <button class="btn btn--info" type="submit" name="submit" aria-label="Submit form button" tabindex="10">Create your website</button>
+    <button class="btn btn--info" type="submit" name="submit" aria-label="Submit form button" tabindex="10">
+      Create your website
+    </button>
   </form>
 </section>
-<!--[if lte IE 9]><script type='text/javascript' src='src/scripts/validate.js'></script><![endif]-->
+<!--[if lte IE 9]><script type='text/javascript' src='js/validator.js'></script><![endif]-->
+<script type='text/javascript' src='js/cardChecker.js'></script>
 </body>
 </html>

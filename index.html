@@ -14,14 +14,14 @@
 <!--[if lt IE 8]>
   <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
-<section class="form--main" role="region">
+<section class="form--main">
   <header>
     <h1>Sign Up Now</h1>
     <p>Pick your new website, free forever.</p>
   </header>
-  <form class="form--body" id="paymentValidation" role="form">
-    <ol class="form--section" role="list">
-      <li class="form--section-website" role="listitem">
+  <form class="form--body" id="paymentValidation">
+    <ol class="form--section">
+      <li class="form--section-website">
         <h2>Pick a website address.</h2>
           <div class="form--section__field form--section__field--website">
             <label class="form--label-first" for="webAddress">Website address</label>
@@ -34,31 +34,32 @@
             <p id="descriptionParagraph">Enter preferred name for your free domain that will have .free.websites.com extension.</p>
           </div>
       </li>
-      <li role="listitem">
+      <li>
         <h2>Create an account.</h2>
         <div class="form--section__field">
           <label class="form--label-first" for="fullName">Full name</label>
-          <input class="form__input block_element" type="text" role="textbox" name="fullName" id="fullName" aria-required="true"
+          <input class="form__input block_element" type="text" name="fullName" id="fullName" aria-required="true"
             aria-label="Full name" placeholder="Full Name" tabindex="2" required>
           <label class="form--label" for="emailAdd">Email address</label>
-          <input class="form__input block_element" type="email" role="textbox" name="emailAdd" id="emailAdd" aria-required="true" aria-label="Email address" placeholder="E-mail" tabindex="3" required>
+          <input class="form__input block_element" type="email" name="emailAdd" id="emailAdd" aria-required="true" aria-label="Email address" placeholder="E-mail" tabindex="3" required>
           <label class="form--label" for="passwrd">Password</label>
-          <input class="form__input block_element" type="password" role="textbox" name="passwrd" id="passwrd" aria-required="true" aria-label="Password" placeholder="Password" tabindex="4" required>
-          <input class="form__input block_element" type="text" id="passwrd_hide" aria-hidden="true">
-          <div class="form--section__check" id="revealPassword" placeholder="Password" required>
+          <input class="form__input block_element" type="password" name="passwrd" id="passwrd" aria-required="true" aria-label="Password" placeholder="Password" tabindex="4" required>
+          <input class="form__input block_element" type="text" id="passwrd_hide" placeholder="Password"
+            aria-hidden="true">
+          <div class="form--section__check" id="revealPassword">
             <input class="form--section_checkbox" type="checkbox" name="reveal" aria-hidden="true"
               id="reveal_password_container" tabindex="5">
-            <img src="img/unselected.png" id="revealPasswordImage">
+            <img src="img/unselected.png" alt="Check Box" id="revealPasswordImage">
             <span class="font--small">Reveal password</span>
           </div>
         </div>
       </li>
-      <li role="listitem">
+      <li>
         <h2>Enter your payment info.</h2>
         <div class="form--section__field">
           <div class="form--section__card-number">
             <label class="form--label-first block_element">Credit card number</label>
-            <input class="form__input" aria-describedby="creditCardNumberAria" type="text" role="textbox"
+            <input class="form__input" aria-describedby="creditCardNumberAria" type="text"
               name="cardNumber" id="cardNumber" placeholder="Credit Card Number" tabindex="6" required>
           </div>
           <div class="form--section__card-image">
@@ -71,39 +72,39 @@
           <p class="error--message_style" id="creditCardNumberError">You didn't entered a valid card number.</p>
           <div class="form--section_card-securityCode">
             <label class="form--label" for="secCode">Security code</label>
-            <input class="form__input" type="text" role="textbox" name="secCode" name="secCode" id="secCode"
+            <input class="form__input" type="text" name="secCode" id="secCode"
               aria-required="true" aria-label="Security code" placeholder="Security Code" tabindex="7" required>
           </div>
             <div class="form--section_card-expirationDate">
               <label class="form--label" for="expMonth">Expiration date</label>
-              <select id="expMonth" name="expMonth" title="ExpirationMonth" role="region" aria-label="Expiration month"
+              <select id="expMonth" name="expMonth" title="ExpirationMonth" aria-label="Expiration month"
                 tabindex="8">
-                <option role="option" value="01">01 - January</option>
-                <option role="option" value="02">02 - February</option>
-                <option role="option" value="03">03 - March</option>
-                <option role="option" value="04">04 - April</option>
-                <option role="option" value="05">05 - May</option>
-                <option role="option" value="06">06 - June</option>
-                <option role="option" value="07">07 - July</option>
-                <option role="option" value="08">08 - August</option>
-                <option role="option" value="09">09 - September</option>
-                <option role="option" value="10">10 - October</option>
-                <option role="option" value="11">11 - November</option>
-                <option role="option" value="12">12 - December</option>
+                <option value="01">01 - January</option>
+                <option value="02">02 - February</option>
+                <option value="03">03 - March</option>
+                <option value="04">04 - April</option>
+                <option value="05">05 - May</option>
+                <option value="06">06 - June</option>
+                <option value="07">07 - July</option>
+                <option value="08">08 - August</option>
+                <option value="09">09 - September</option>
+                <option value="10">10 - October</option>
+                <option value="11">11 - November</option>
+                <option value="12">12 - December</option>
                </select>
-               <select id="expirationYear" name="expirationYear" title="ExpirationYear" role="region"
+               <select id="expirationYear" name="expirationYear" title="ExpirationYear"
                 aria-label="Expiration year"
                 tabindex="9">
-                <option role="option" value="2016" selected="selected">2016</option>
-                <option role="option" value="2017">2017</option>
-                <option role="option" value="2018">2018</option>
-                <option role="option" value="2019">2019</option>
+                <option value="2016" selected="selected">2016</option>
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
               </select>
             </div>
           </div>
       </li>
     </ol>
-    <button class="btn btn--info" type="submit" role="button" id="submit" name="submit"
+    <button class="btn btn--info" type="submit" id="submit" name="submit"
       aria-label="Submit form button" tabindex="10">
       Create your website
     </button>

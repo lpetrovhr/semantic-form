@@ -1,3 +1,30 @@
+document.getElementById('reveal_password_container').style.display = 'none';
+
+
+$('#passwrd').blur(function(){
+  $('#passwrd_hide').val($(this).val());
+});
+
+$('#passwrd_hide').blur(function(){
+  $('#passwrd').val($(this).val());
+});
+
+var checked = false;
+$('#revealPassword').click(function(){
+  if(!checked) {
+    checked=true;
+    $('#revealPasswordImage').attr('src', 'img/selected.png');
+    $('#passwrd').hide();
+    $('#passwrd_hide').show();
+  }
+  else {
+    checked=false;
+    $('#revealPasswordImage').attr('src', 'img/unselected.png');
+    $('#passwrd').show();
+    $('#passwrd_hide').hide();
+  }
+});
+
 $(function() {
   var lastEl;
   $('#cardNumber').validateCreditCard(function(result) {
@@ -21,7 +48,6 @@ $('form').submit(function(e){
   var cardNumberError = false;
   $('#cardNumber').validateCreditCard(function(result) {
     if(!result.length_valid) {
-      document.getElementById('creditCardNumberError').style.display = 'inline-block';
       document.getElementById('cardNumber').setAttribute('aria-describedby', 'creditCardNumberError');
       cardNumberError = true;
     }

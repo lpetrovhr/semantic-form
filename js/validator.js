@@ -1,11 +1,7 @@
-function isIE () {
-  var myNav = navigator.userAgent.toLowerCase();
-  return (myNav.indexOf('msie') != -1) ? parseInt(myNav.split('msie')[1]) : false;
-}
+
 var isSafari = Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0;
 
-
-if(isSafari || isIE() < 10) {
+if(isSafari || msieversion() < 10) {
   $('#paymentValidation').validate({
     rules: {
       webAddress: { required: true },

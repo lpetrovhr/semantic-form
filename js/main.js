@@ -1,27 +1,16 @@
 document.getElementById('reveal_password_container').style.display = 'none';
 
-
-$('#passwrd').blur(function(){
-  $('#passwrd_hide').val($(this).val());
-});
-
-$('#passwrd_hide').blur(function(){
-  $('#passwrd').val($(this).val());
-});
+if(msieversion() < 9) { document.getElementById('revealPassword').style.display = 'none'; }
 
 var checked = false;
-$('#revealPassword').click(function(){
-  if(!checked) {
-    checked=true;
-    $('#revealPasswordImage').attr('src', 'img/selected.png');
-    $('#passwrd').hide();
-    $('#passwrd_hide').show();
-  }
-  else {
-    checked=false;
-    $('#revealPasswordImage').attr('src', 'img/unselected.png');
-    $('#passwrd').show();
-    $('#passwrd_hide').hide();
+
+$('#revealPassword').click(function() {
+  changeCheckboxState();
+});
+
+$('#revealPasswordImage').keydown(function(event) {
+  if(event.keyCode == 32) {
+    changeCheckboxState();
   }
 });
 
@@ -35,7 +24,7 @@ $(function() {
         lastElement.style.opacity = '0.4';
         lastElement.style.filter = 'alpha(opacity=30)';
       }
-    } else if(result.length_valid){
+    } else if(result.length_valid) {
         var element = document.getElementById(result.card_type.name);
         element.style.opacity = '1';
         element.style.filter = 'alpha(opacity=100)';
@@ -44,7 +33,7 @@ $(function() {
   }, { accept: ['visa', 'mastercard', 'discover', 'amex'] });
 });
 
-$('form').submit(function(e){
+$('form').submit(function(e) {
   var cardNumberError = false;
   $('#cardNumber').validateCreditCard(function(result) {
     if(!result.length_valid) {
@@ -58,3 +47,24 @@ $('form').submit(function(e){
     document.getElementById('cardNumber').focus();
   }
 });
+
+function changeCheckboxState() {
+  if(!checked) {
+    checked=true;
+    $('#revealPasswordImage').attr('src', 'img/selected.png');
+    document.getElementById('passwrd').setAttribute('type', 'text');
+  }
+  else {
+    checked=false;
+    $('#revealPasswordImage').attr('src', 'img/unselected.png');
+    document.getElementById('passwrd').setAttribute('type', 'password');
+  }
+};
+
+function msieversion() {
+    var ua = window.navigator.userAgent;
+    var msie = ua.indexOf("MSIE ");
+    var explorerVersion = parseInt(ua.substring(msie + 5, ua.indexOf(".", msie)));
+
+    return explorerVersion;
+}

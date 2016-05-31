@@ -1,3 +1,11 @@
+.form--main label {
+    display: block;
+}
+
+.form--main label:after {
+    content: ":";
+}
+
 .font--small {
     font-size: 12px;
 }
@@ -31,14 +39,6 @@
 .form--body {
     border-top: 1px solid #a8ccd5;
     padding: 10px;
-}
-
-label {
-    display: block;
-}
-
-label:after {
-    content: ":";
 }
 
 .form--section-website {
@@ -202,37 +202,8 @@ label:after {
     margin: 3px 0 0 5px;
 }
 
-.left {
-    width: 50%;
-    float: left;
-}
-
-.right {
-    float: right;
-    margin-right: 7% 4% 0 0;
-}
-
 #descriptionParagraph {
     display: none;
-}
-
-#extension {
-    margin-left: -20px;
-    width: 40%;
-    text-align: right;
-    border-left: 1px solid #eee;
-}
-
-#right {
-    margin-left: 60%;
-}
-
-#li_left {
-    float: left;
-}
-
-#li_right {
-    margin-left: 20%;
 }
 
 #cardNumber {

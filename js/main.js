@@ -64,22 +64,22 @@ if(isSafari || msieversion() < 10) {
       secCode: { required:true }
       },
       messages: {
-      webAddress: '<img src="img/mark.png"/><i class="errorMessage">Enter website name.</i>',
-      fullName: '<img src="img/mark.png"/><i class="errorMessage">Enter your full name.</i>',
-      emailAdd: '<img src="img/mark.png"/><i class="errorMessage">Enter correct email.</i>',
-      passwrd: '<img src="img/mark.png"/><i class="errorMessage">Password is required.</i>',
-      cardNumber: '<img src="img/mark.png"/><i class="errorMessage">Enter credit card number.</i>',
-      secCode: '<img src="img/mark.png"/><i class="errorMessage">Enter security code.</i>',
-      expirationYear: '<img src="img/mark.png"/><i class="errorMessage">Enter expiration year.</i>',
-      expMonth: '<img src="img/mark.png"/><i class="errorMessage">Enter expiration month.</i>'
+        webAddress: '<img src="img/mark.png"/><i class="errorMessage">Enter website name.</i>',
+        fullName: '<img src="img/mark.png"/><i class="errorMessage">Enter your full name.</i>',
+        emailAdd: '<img src="img/mark.png"/><i class="errorMessage">Enter correct email.</i>',
+        passwrd: '<img src="img/mark.png"/><i class="errorMessage">Password is required.</i>',
+        cardNumber: '<img src="img/mark.png"/><i class="errorMessage">Enter credit card number.</i>',
+        secCode: '<img src="img/mark.png"/><i class="errorMessage">Enter security code.</i>',
+        expirationYear: '<img src="img/mark.png"/><i class="errorMessage">Enter expiration year.</i>',
+        expMonth: '<img src="img/mark.png"/><i class="errorMessage">Enter expiration month.</i>'
       },
       errorPlacement: function (error, element) {
-      error.addClass('error--message_style');
-      if(element.attr('name') == 'expMonth') {
-          error.insertAfter('#expirationYear');
-      } else {
-          error.insertAfter(element);
-      }
+        error.addClass('error--message_style');
+        if(element.attr('name') == 'expMonth') {
+            error.insertAfter('#expirationYear');
+        } else {
+            error.insertAfter(element);
+        }
       },
       errorElement: 'p'
   });
@@ -90,8 +90,7 @@ function changeCheckboxState() {
     checked=true;
     $('#revealPasswordImage').attr('src', 'img/selected.png');
     document.getElementById('passwrd').setAttribute('type', 'text');
-  }
-  else {
+  } else {
     checked=false;
     $('#revealPasswordImage').attr('src', 'img/unselected.png');
     document.getElementById('passwrd').setAttribute('type', 'password');
@@ -99,9 +98,9 @@ function changeCheckboxState() {
 };
 
 function msieversion() {
-    var ua = window.navigator.userAgent;
-    var msie = ua.indexOf("MSIE ");
-    var explorerVersion = parseInt(ua.substring(msie + 5, ua.indexOf(".", msie)));
+  var ua = window.navigator.userAgent;
+  var msie = ua.indexOf("MSIE ");
+  var explorerVersion = parseInt(ua.substring(msie + 5, ua.indexOf(".", msie)));
 
-    return explorerVersion;
+  return explorerVersion;
 }

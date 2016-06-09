@@ -1,21 +1,22 @@
-document.getElementById('reveal_password_container').style.display = 'none';
-
-if(msieversion() < 9) { document.getElementById('revealPassword').style.display = 'none'; }
-
-var checked = false;
+elementsChange();
 
 var isSafari = Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0;
 
+var checked = false;
+
+/* Changes checkbox if revealPassword container is clicked */
 $('#revealPassword').click(function() {
   changeCheckboxState();
 });
 
+/* Changes checkbox if space key is pressed while on revealPasswordImage el. */
 $('#revealPasswordImage').keydown(function(event) {
   if(event.keyCode == 32) {
     changeCheckboxState();
   }
 });
 
+/* Validates card type & changes opacity if valid card number is entered */
 $(function() {
   var lastEl;
   $('#cardNumber').validateCreditCard(function(result) {
@@ -35,6 +36,8 @@ $(function() {
   }, { accept: ['visa', 'mastercard', 'discover', 'amex'] });
 });
 
+/* Checks if card number is valid lenght if not focus on that field and reveal
+   message for screen readers so they know that invalid number is entered */
 $('form').submit(function(e) {
   var cardNumberError = false;
   $('#cardNumber').validateCreditCard(function(result) {
@@ -50,6 +53,7 @@ $('form').submit(function(e) {
   }
 });
 
+/* Check browser version and call validation script for below specified */
 if(isSafari || msieversion() < 10) {
   $('#paymentValidation').validate({
     rules: {
@@ -85,6 +89,9 @@ if(isSafari || msieversion() < 10) {
   });
 }
 
+/* Function for changing the state of checkbox, this function changes
+   image if checkbox is selected or unselected and change type of the
+   input field so that we can reveal or hide password */
 function changeCheckboxState() {
   if(!checked) {
     checked=true;
@@ -97,10 +104,30 @@ function changeCheckboxState() {
   }
 };
 
+/* Function for checking IE version */
 function msieversion() {
   var ua = window.navigator.userAgent;
   var msie = ua.indexOf("MSIE ");
   var explorerVersion = parseInt(ua.substring(msie + 5, ua.indexOf(".", msie)));
 
   return explorerVersion;
+}
+
+//change elements behavior on load
+function elementsChange() {
+  /* Hides checkbox if js is enabled */
+  document.getElementById('reveal_password_container').style.display = 'none';
+  /* Reveals reveals checkbox image if js is enabled */
+  document.getElementById('revealPasswordImage').style.display = 'inline-block';
+  /* Hides radio buttons for cards if js is enabled */
+  document.getElementsByClassName('form--section_card-image-radio')[0].style.display = 'none';
+  /* Gets all cards and changes it's opacity */
+  var cardPictures = document.getElementsByClassName('card--inactive');
+  for(var i = 0; i < cardPictures.length; i++) {
+    cardPictures[i].style.opacity = '0.3'
+  }
+
+  /* Checkes if version of browser is IE and if it is lower than v9 and hides reveal password because lower
+     versions have their own reveal password in input field functionality */
+  if(msieversion() < 9) { document.getElementById('revealPassword').style.display = 'none'; }
 }

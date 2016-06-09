@@ -120,10 +120,6 @@ ol > li:before {
   margin-left: 3px;
 }
 
-li:before {
-
-}
-
 .form--section__card-number {
   width: 45%;
   vertical-align: top;
@@ -134,6 +130,15 @@ li:before {
   width: 50%;
   margin: 6% 0 0 2%;
   display: inline-block;
+}
+
+.form--section_card-image-radio {
+  display: inline-block;
+  width: 100%;
+}
+
+.form--section_card-image-radio input {
+  margin: 0 8% 0 8%;
 }
 
 .form--section__card-image img {
@@ -211,8 +216,8 @@ li:before {
 }
 
 .card--inactive {
-  opacity: .3;
-  filter: alpha(opacity=30);
+  opacity: 1;
+  filter: alpha(opacity=100);
 }
 
 .errorMessageBefore {
@@ -268,6 +273,7 @@ li:before {
 
 #revealPasswordImage {
   float: left;
+  display: none;
 }
 
 #reveal_password_container {

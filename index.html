@@ -65,8 +65,6 @@
               <input aria-label="Password" aria-required="true"
               class="form__input block_element" id="passwrd" name="passwrd"
               placeholder="Password" required="" type="password">
-              <input aria-hidden="true" class="form__input block_element"
-              id="passwrd_hide" placeholder="Password" type="text">
               <div class="form--section__check" id="revealPassword">
                 <input aria-hidden="true" class="form--section_checkbox"
                 id="reveal_password_container" name="reveal"
@@ -97,6 +95,12 @@
                 class="card--inactive" id="discover" src="img/CCDiscover.png">
                 <img alt="amex" class="card--inactive" id="amex"
                 src="img/CCAmerican.png">
+                <div class="form--section_card-image-radio">
+                  <input type="radio" name="card" value="visa">
+                  <input type="radio" name="card" value="master">
+                  <input type="radio" name="card" value="discover">
+                  <input type="radio" name="card" value="american">
+                </div>
               </div>
               <span id="creditCardNumberAria">
                 Enter your credit card number

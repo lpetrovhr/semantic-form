@@ -1,253 +1,283 @@
+ol {
+    counter-reset: li;
+    margin-left: 0;
+    padding-left: 0;
+}
+ol > li {
+    position: relative;
+}
+ol > li:before {
+    content: counter(li);
+    counter-increment: li;
+    position: absolute;
+    top: 2%;
+    left: -10.5%;
+    width: 7%;
+    height: 30px;
+    margin-right: 8px;
+    padding: 4px;
+    color: #4f8ece;
+    background: url(../img/round.png);
+    font-weight: 400;
+    text-align: center;
+}
+
 .form--main label {
-    display: block;
+  display: block;
 }
 
 .form--main label:after {
-    content: ":";
+  content: ":";
 }
 
 .font--small {
-    font-size: 12px;
+  font-size: 12px;
 }
 
 .form--main {
-    font: 200 18px sans-serif;
-    color: #788084;
-    width: 500px;
-    border: 20px solid #a8ccd5;
-    border-bottom: 35px solid #a8ccd5;
-    background-color: #fff;
-    margin: 0 auto;
-    padding: 18px;
+  font: 200 18px sans-serif;
+  color: #788084;
+  width: 500px;
+  border: 20px solid #a8ccd5;
+  border-bottom: 35px solid #a8ccd5;
+  background-color: #fff;
+  margin: 0 auto;
+  padding: 18px;
 }
 
 .form--main header {
-    padding: 10px;
-    margin-bottom: 5%;
-    font-size: 14px;
-}
-
-.form--main h1,h2 {
-    color: #4f8ece;
+  padding: 10px;
+  margin-bottom: 5%;
+  font-size: 14px;
 }
 
 .form--main h1 {
-    font-size: 37px;
-    font-weight: 400;
+  color: #4f8ece;
+  font-size: 37px;
+  font-weight: 400;
+}
+
+.form--main h2 {
+  color: #4f8ece;
 }
 
 .form--body {
-    border-top: 1px solid #a8ccd5;
-    padding: 10px;
+  border-top: 1px solid #a8ccd5;
+  padding: 10px;
 }
 
 .form--section-website {
-    position: relative;
+  position: relative;
 }
 
-.form--section__field--website span{
-    position: absolute;
-    left: 55.3%;
-    top: 2px;
-    padding-top: 1.3%;
-    height: 88%;
-    width: 40%;
-    text-align: center;
-    background-color: #f2f3f4;
-    font-size: 15px;
+.form--section__field--website span {
+  position: absolute;
+  left: 55.3%;
+  top: 2px;
+  padding-top: 1.3%;
+  height: 88%;
+  width: 40%;
+  text-align: center;
+  background-color: #f2f3f4;
+  font-size: 15px;
 }
 
 .form--section__field {
-    background-color: #f2f3f4;
-    border-radius: 3px;
-    padding: 20px;
+  background-color: #f2f3f4;
+  border-radius: 3px;
+  padding: 20px;
 }
 
-.form--section__field--website li{
-    position: relative;
+.form--section__field--website li {
+  position: relative;
 }
 
-.form--section h2 {
-    margin-top: 5%;
-    font-size: 20px;
-    font-weight: 400;
+.form--section_title {
+  color: #4f8ece;
+  margin-top: 10px;
+  font-size: 20px;
+  display: inline-block;
 }
 
 .form--label-first {
-    font-size: 14px;
-    margin: 1% 0 1% 1%;
+  font-size: 14px;
+  margin: 1% 0 1% 1%;
 }
 
 .form--label {
-    font-size: 14px;
-    margin: 20px 0 1% 1%;
+  font-size: 14px;
+  margin: 20px 0 1% 1%;
 }
 
 .form--section_checkbox {
-    border: none;
+  border: none;
 }
 
 .form__input {
-    border: 2px solid #a8ccd5;
-    border-radius: 3px;
-    padding: 8px;
-    margin-left: 3px;
+  border: 2px solid #a8ccd5;
+  border-radius: 3px;
+  padding: 8px;
+  margin-left: 3px;
+}
+
+li:before {
+
 }
 
 .form--section__card-number {
-    width: 45%;
-    vertical-align: top;
-    display: inline-block;
+  width: 45%;
+  vertical-align: top;
+  display: inline-block;
 }
 
 .form--section__card-image {
-    width: 50%;
-    margin: 6% 0 0 2%;
-    display: inline-block;
+  width: 50%;
+  margin: 6% 0 0 2%;
+  display: inline-block;
 }
 
 .form--section__card-image img {
-    width: 40px;
-    height: 25px;
+  width: 40px;
+  height: 25px;
 }
 
 .form--section_card-securityCode {
-    width: 35%;
-    margin-top: 1%;
-    vertical-align: top;
-    display: inline-block;
+  width: 35%;
+  margin-top: 1%;
+  vertical-align: top;
+  display: inline-block;
 }
 
 .form--section_card-securityCode input {
-    width: 100%;
+  width: 100%;
 }
 
 .form--section_card-expirationDate {
-    width: 60%;
-    margin-top: 1%;
-    margin-left: 3.5%;
-    display: inline-block;
+  width: 60%;
+  margin-top: 1%;
+  margin-left: 3.5%;
+  display: inline-block;
 }
 
 .form--section_card-expirationDate input {
-    width: 60%
+  width: 60%;
 }
 
 .form--section_card-expirationDate input:nth-child(3) {
-    width: 30%;
-    margin-left: 1%;
+  width: 30%;
+  margin-left: 1%;
 }
 
 .form--section__check {
-    cursor: pointer;
-    margin-top: 10px;
-    display: inline-block;
+  cursor: pointer;
+  margin-top: 10px;
+  display: inline-block;
 }
 
 .form--section__check span {
-    float: left;
-    margin: 4px 0 0 4px;
+  float: left;
+  margin: 4px 0 0 4px;
 }
 
 .error--message_style {
-    font-size: 13px;
-    margin: 10px 0 0 5px;
-    height: 10px;
-    color: #d0021b;
-    font-weight: 500;
+  font-size: 13px;
+  margin: 10px 0 0 5px;
+  height: 10px;
+  color: #d0021b;
+  font-weight: 500;
 }
 
 .block_element {
-    display: block;
-    width: 95%;
+  display: block;
+  width: 95%;
 }
 
 .inline_element {
-    display: inline;
+  display: inline;
 }
 
 .btn {
-    width: 100%;
-    margin-top: 5%;
-    color: #fff;
-    font-size: 18px;
-    border: 1px solid;
-    padding: 2%;
+  width: 100%;
+  margin-top: 5%;
+  color: #fff;
+  font-size: 18px;
+  border: 1px solid;
+  padding: 2%;
 }
 
 .btn--info {
-    background-color: #4f8ece;
-    border-color: #4f8ece;
+  background-color: #4f8ece;
+  border-color: #4f8ece;
 }
 
 .card--inactive {
-    opacity: 0.3;
-    filter:alpha(opacity=30);
+  opacity: .3;
+  filter: alpha(opacity=30);
 }
 
 .errorMessageBefore {
-    border-radius: 50%;
-    width: 20px;
-    text-align: center;
-    height: 20px;
-    font-size: 15px;
-    position: absolute;
-    color: #fff;
-    border: 1px solid #d0021b;
-    background-color: #d0021b;
+  border-radius: 50%;
+  width: 20px;
+  text-align: center;
+  height: 20px;
+  font-size: 15px;
+  position: absolute;
+  color: #fff;
+  border: 1px solid #d0021b;
+  background-color: #d0021b;
 }
 
 .errorMessage {
-    position: absolute;
-    margin: 3px 0 0 5px;
+  position: absolute;
+  margin: 3px 0 0 5px;
 }
 
 #descriptionParagraph {
-    display: none;
+  display: none;
 }
 
 #cardNumber {
-    vertical-align: top;
-    width: 100%;
+  vertical-align: top;
+  width: 100%;
 }
 
 #expMonth {
-    width: 50%;
-    height: 30px;
-    background-color: #fff;
+  width: 50%;
+  height: 30px;
+  background-color: #fff;
 }
 
 #expirationYear {
-    width: 43%;
-    height: 30px;
-    background-color: #fff;
+  width: 43%;
+  height: 30px;
+  background-color: #fff;
 }
 
 #creditCardNumberAria {
-    display: none;
+  display: none;
 }
 
 #creditCardNumberError {
-    display: none;
-    width: 100%;
+  display: none;
+  width: 100%;
 }
 
 #webAddress {
-    padding-right: 4%;
+  padding-right: 4%;
 }
 
 #revealPasswordImage {
-    float: left;
+  float: left;
 }
 
 #reveal_password_container {
-    display: inline-block;
+  display: inline-block;
 }
 
 #passwrd {
-    display: inline-block;
+  display: inline-block;
 }
 
 #passwrd_hide {
-    display: none;
+  display: none;
 }

@@ -28,154 +28,156 @@
       </header>
       <form class="form--body" id="paymentValidation" name="paymentValidation">
         <ol class="form--section">
-          <li class="form--section-website">
-            <span class="form--section_title">
-              Pick a website address.
-            </span>
-            <div class="form--section__field form--section__field--website">
-              <label class="form--label-first" for="webAddress">Website
-              address</label>
-              <div style="position: relative;">
-                <input aria-describedby="descriptionParagraph" aria-label=
-                "Address name" aria-required="true" class=
-                "form__input block_element" id="webAddress" name="webAddress"
-                placeholder="Domain Name" required="" type="text">
-                <span>.free.websites.com</span>
+         <li class="form--section-website">
+          <fieldset>
+              <legend class="form--section_title">
+                Pick a website address.
+              </legend>
+              <div class="form--section__field form--section__field--website full_width_block">
+                <label class="form--label-first block_element" for="webAddress">Website
+                address</label>
+                <div style="position: relative;">
+                  <input aria-describedby="descriptionParagraph" aria-label=
+                  "Address name" aria-required="true" class=
+                  "form__input full_width_block" id="webAddress" name="webAddress"
+                  placeholder="Domain Name" required="" type="text">
+                  <span>.free.websites.com</span>
+                </div>
+                <span id="descriptionParagraph">
+                  Enter preferred name for your free domain that will have
+                  .free.websites.com extension.
+                </span>
               </div>
-              <span id="descriptionParagraph">
-                Enter preferred name for your free domain that will have
-                .free.websites.com extension.
-              </span>
-            </div>
+            </fieldset>
           </li>
           <li>
-            <span class="form--section_title">
+           <fieldset>
+            <legend class="form--section_title">
               Create an account.
-            </span>
+            </legend>
             <div class="form--section__field">
               <label class="form--label-first" for="fullName">Full name</label>
               <input aria-label="Full name" aria-required="true"
-              class="form__input block_element" id="fullName" name="fullName"
+              class="form__input full_width_block" id="fullName" name="fullName"
               placeholder="Full Name" required="" type="text">
               <label class="form--label" for="emailAdd">Email address</label>
               <input aria-label="Email address" aria-required="true"
-              class="form__input block_element" id="emailAdd" name="emailAdd"
+              class="form__input full_width_block" id="emailAdd" name="emailAdd"
               placeholder="E-mail" required="" type="email">
               <label class="form--label" for="passwrd">Password</label>
               <input aria-label="Password" aria-required="true"
-              class="form__input block_element" id="passwrd" name="passwrd"
+              class="form__input full_width_block" id="passwrd" name="passwrd"
               placeholder="Password" required="" type="password">
-              <div class="form--section__check" id="revealPassword">
-                <input aria-hidden="true" class="form--section_checkbox"
+              <div class="form--section__check check" id="revealPassword">
+                <input aria-hidden="true" class="form--section_checkbox check"
                 id="reveal_password_container" name="reveal"
                 type="checkbox">
-                <img alt="Check Box" id="revealPasswordImage"
-                src="img/unselected.png" tabindex="0">
-                <span class="font--small">Reveal password</span>
+                <label class="password_label" for="reveal_password_container"></label>
+                <label class="font--small" for="reveal_password_container">
+                  Reveal password
+                </label>
               </div>
             </div>
+           </fieldset>
           </li>
           <li>
-            <span class="form--section_title">
-              Enter your payment info.
-            </span>
-            <div class="form--section__field">
-              <div class="form--section__card-number">
-                <label class="form--label-first block_element">Credit card
-                number</label>
-                <input aria-describedby="creditCardNumberAria"
-                class="form__input" id="cardNumber" name="cardNumber"
-                placeholder="Credit Card Number" required="" type="text">
-              </div>
-              <div class="form--section__card-image">
-                <img alt="visa" class="card--inactive" id="visa"
-                src="img/CCVisa.png">
-                <img alt="mastercard" class="card--inactive"
-                id="mastercard" src="img/CCMasterCard.png"> <img alt="discover"
-                class="card--inactive" id="discover" src="img/CCDiscover.png">
-                <img alt="amex" class="card--inactive" id="amex"
-                src="img/CCAmerican.png">
-                <div class="form--section_card-image-radio">
-                  <input type="radio" name="card" value="visa">
-                  <input type="radio" name="card" value="master">
-                  <input type="radio" name="card" value="discover">
-                  <input type="radio" name="card" value="american">
+            <fieldset>
+              <legend class="form--section_title">
+                Enter your payment info.
+              </legend>
+              <div class="form--section__field">
+                <div class="form--section__card-number">
+                  <label class="form--label-first block_element">Credit card
+                  number</label>
+                  <input aria-describedby="creditCardNumberAria"
+                  class="form__input" id="cardNumber" name="cardNumber"
+                  placeholder="Credit Card Number" required="" type="text">
+                </div>
+                <div class="form--section__card-image" id="card-image">
+                    <input type="radio" name="card" value="visa" id="visa" aria-label="Visa">
+                    <label class="ccard visa inline-block" id="visa_img" for="visa">Visa</label>
+                    <input type="radio" name="card" value="master" id="mastercard" aria-label="Master Card">
+                    <label class="ccard master inline-block" id="mastercard_img" for="mastercard">Mastercard</label>
+                    <input type="radio" name="card" value="discover" id="discover" aria-label="Discover">
+                    <label class="ccard discover" id="discover_img" for="discover">Discover</label>
+                    <input type="radio" name="card" value="american" id="amex" aria-label="American">
+                    <label class="ccard amex" id="amex_img" for="amex">American</label>
+                </div>
+                <span id="creditCardNumberAria">
+                  Enter your credit card number
+                </span>
+                <span class="error--message_style" id="creditCardNumberError">
+                  You didn't entered a valid card number.
+                </span>
+                <div class="form--section_card-securityCode">
+                  <label class="form--label block_element" for="secCode">Security code</label>
+                  <input aria-label="Security code" aria-required="true"
+                  class="form__input" id="secCode" name="secCode"
+                  placeholder="Security Code" required="" type="text">
+                </div>
+
+                <div class="form--section_card-expirationDate">
+                  <label class="form--label block_element" for="expMonth">
+                    Expiration date
+                  </label>
+                  <select aria-label="Expiration month" id="expMonth"
+                  name="expMonth" title="ExpirationMonth">
+                    <option value="01">
+                      01 - January
+                    </option>
+                    <option value="02">
+                      02 - February
+                    </option>
+                    <option value="03">
+                      03 - March
+                    </option>
+                    <option value="04">
+                      04 - April
+                    </option>
+                    <option value="05">
+                      05 - May
+                    </option>
+                    <option value="06">
+                      06 - June
+                    </option>
+                    <option value="07">
+                      07 - July
+                    </option>
+                    <option value="08">
+                      08 - August
+                    </option>
+                    <option value="09">
+                      09 - September
+                    </option>
+                    <option value="10">
+                      10 - October
+                    </option>
+                    <option value="11">
+                      11 - November
+                    </option>
+                    <option value="12">
+                      12 - December
+                    </option>
+                  </select>
+
+                  <select aria-label="Expiration year" id="expirationYear"
+                  name="expirationYear" title="ExpirationYear">
+                    <option selected="selected" value="2016">
+                      2016
+                    </option>
+                    <option value="2017">
+                      2017
+                    </option>
+                    <option value="2018">
+                      2018
+                    </option>
+                    <option value="2019">
+                      2019
+                    </option>
+                  </select>
                 </div>
               </div>
-              <span id="creditCardNumberAria">
-                Enter your credit card number
-              </span>
-              <span class="error--message_style" id="creditCardNumberError">
-                You didn't entered a valid card number.
-              </span>
-              <div class="form--section_card-securityCode">
-                <label class="form--label" for="secCode">Security code</label>
-                <input aria-label="Security code" aria-required="true"
-                class="form__input" id="secCode" name="secCode"
-                placeholder="Security Code" required="" type="text">
-              </div>
-
-              <div class="form--section_card-expirationDate">
-                <label class="form--label" for="expMonth">
-                  Expiration date
-                </label>
-                <select aria-label="Expiration month" id="expMonth"
-                name="expMonth" title="ExpirationMonth">
-                  <option value="01">
-                    01 - January
-                  </option>
-                  <option value="02">
-                    02 - February
-                  </option>
-                  <option value="03">
-                    03 - March
-                  </option>
-                  <option value="04">
-                    04 - April
-                  </option>
-                  <option value="05">
-                    05 - May
-                  </option>
-                  <option value="06">
-                    06 - June
-                  </option>
-                  <option value="07">
-                    07 - July
-                  </option>
-                  <option value="08">
-                    08 - August
-                  </option>
-                  <option value="09">
-                    09 - September
-                  </option>
-                  <option value="10">
-                    10 - October
-                  </option>
-                  <option value="11">
-                    11 - November
-                  </option>
-                  <option value="12">
-                    12 - December
-                  </option>
-                </select>
-
-                <select aria-label="Expiration year" id="expirationYear"
-                name="expirationYear" title="ExpirationYear">
-                  <option selected="selected" value="2016">
-                    2016
-                  </option>
-                  <option value="2017">
-                    2017
-                  </option>
-                  <option value="2018">
-                    2018
-                  </option>
-                  <option value="2019">
-                    2019
-                  </option>
-                </select>
-              </div>
-            </div>
+            </fieldset>
           </li>
         </ol>
         <button aria-label="Submit form button" class="btn btn--info"

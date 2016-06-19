@@ -22,14 +22,6 @@ ol > li:before {
     text-align: center;
 }
 
-.form--main label {
-  display: block;
-}
-
-.form--main label:after {
-  content: ":";
-}
-
 .font--small {
   font-size: 12px;
 }
@@ -110,7 +102,34 @@ ol > li:before {
 }
 
 .form--section_checkbox {
-  border: none;
+  margin:0;
+  padding: 0;
+  display: none;
+  -webkit-appearance: none;
+  -moz-appearance:    none;
+  -ms-appearance:     none;
+  -o-appearance:      none;
+  appearance:         none;
+}
+
+.password_label {
+  background-image: url(../img/unselected.png);
+  width: 20px;
+  height: 20px;
+  vertical-align: top;
+}
+
+.password_label span {
+  position: absolute;
+  left: 22px;
+  top: 3px;
+}
+
+.form--section__check input:checked +.password_label {
+  background-image: url(../img/selected.png);
+  width: 20px;
+  height: 20px;
+  vertical-align: top;
 }
 
 .form__input {
@@ -127,8 +146,7 @@ ol > li:before {
 }
 
 .form--section__card-image {
-  width: 50%;
-  margin: 6% 0 0 2%;
+  margin: 6% 0 0 -4%;
   display: inline-block;
 }
 
@@ -141,9 +159,45 @@ ol > li:before {
   margin: 0 8% 0 8%;
 }
 
-.form--section__card-image img {
-  width: 40px;
-  height: 25px;
+.form--section__card-image label {
+  text-indent: 999px;
+  overflow: hidden;
+}
+
+.form--section__card-image input{
+    margin:0;
+    padding:0;
+    -webkit-appearance:none;
+    -moz-appearance:   none;
+    appearance:        none;
+    display: none;
+}
+
+.visa{background-image:url(../img/CCVisa.png);}
+.master{background-image:url(../img/CCMasterCard.png);}
+.discover{background-image:url(../img/CCDiscover.png);}
+.amex{background-image:url(../img/CCAmerican.png);}
+
+.form--section__card-image input:checked +.ccard{
+    -webkit-filter: none;
+       -moz-filter: none;
+            filter: none;
+}
+
+.form--section__card-image input:active +.ccard{opacity: .9;}
+
+.ccard{
+    cursor:pointer;
+    background-size:contain;
+    background-repeat:no-repeat;
+    display:inline-block;
+    width:45px; height:30px;
+    -webkit-transition: all 100ms ease-in;
+    -moz-transition:    all 100ms ease-in;
+    transition:         all 100ms ease-in;
+    -webkit-filter:   brightness(1) opacity(.4);
+    -moz-filter:     brightness(1) opacity(.4);
+    filter:          brightness(1) opacity(.4);
 }
 
 .form--section_card-securityCode {
@@ -176,12 +230,6 @@ ol > li:before {
 .form--section__check {
   cursor: pointer;
   margin-top: 10px;
-  display: inline-block;
-}
-
-.form--section__check span {
-  float: left;
-  margin: 4px 0 0 4px;
 }
 
 .error--message_style {
@@ -194,11 +242,19 @@ ol > li:before {
 
 .block_element {
   display: block;
-  width: 95%;
 }
 
 .inline_element {
   display: inline;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.full_width_block {
+  display: block;
+  width: 95%;
 }
 
 .btn {
@@ -243,7 +299,7 @@ ol > li:before {
 
 #cardNumber {
   vertical-align: top;
-  width: 100%;
+  width: 90%;
 }
 
 #expMonth {
@@ -271,12 +327,16 @@ ol > li:before {
   padding-right: 4%;
 }
 
+#revealPassword {
+  display: inline-block;
+}
+
 #revealPasswordImage {
   float: left;
   display: none;
 }
 
-#reveal_password_container {
+#form--section_checkbox {
   display: inline-block;
 }
 
@@ -286,4 +346,13 @@ ol > li:before {
 
 #passwrd_hide {
   display: none;
+}
+
+#revealPassword :after {
+  content: '';
+}
+
+#revealPassword label {
+  display: inline-block;
+  cursor: pointer;
 }

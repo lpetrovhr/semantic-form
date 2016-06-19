@@ -5,15 +5,8 @@ var isSafari = Object.prototype.toString.call(window.HTMLElement).indexOf('Const
 var checked = false;
 
 /* Changes checkbox if revealPassword container is clicked */
-$('#revealPassword').click(function() {
+$('.check').click(function() {
   changeCheckboxState();
-});
-
-/* Changes checkbox if space key is pressed while on revealPasswordImage el. */
-$('#revealPasswordImage').keydown(function(event) {
-  if(event.keyCode == 32) {
-    changeCheckboxState();
-  }
 });
 
 /* Validates card type & changes opacity if valid card number is entered */
@@ -24,13 +17,11 @@ $(function() {
       if (lastEl == null) {}
       else {
         var lastElement = document.getElementById(lastEl);
-        lastElement.style.opacity = '0.4';
-        lastElement.style.filter = 'alpha(opacity=30)';
+        lastElement.checked = false;
       }
     } else if(result.length_valid) {
         var element = document.getElementById(result.card_type.name);
-        element.style.opacity = '1';
-        element.style.filter = 'alpha(opacity=100)';
+        element.checked = true;
         lastEl = result.card_type.name;
     }
   }, { accept: ['visa', 'mastercard', 'discover', 'amex'] });
@@ -95,11 +86,9 @@ if(isSafari || msieversion() < 10) {
 function changeCheckboxState() {
   if(!checked) {
     checked=true;
-    $('#revealPasswordImage').attr('src', 'img/selected.png');
     document.getElementById('passwrd').setAttribute('type', 'text');
   } else {
     checked=false;
-    $('#revealPasswordImage').attr('src', 'img/unselected.png');
     document.getElementById('passwrd').setAttribute('type', 'password');
   }
 };
@@ -107,7 +96,7 @@ function changeCheckboxState() {
 /* Function for checking IE version */
 function msieversion() {
   var ua = window.navigator.userAgent;
-  var msie = ua.indexOf("MSIE ");
+  var msie = ua.indexOf("MSIE");
   var explorerVersion = parseInt(ua.substring(msie + 5, ua.indexOf(".", msie)));
 
   return explorerVersion;
@@ -115,12 +104,6 @@ function msieversion() {
 
 //change elements behavior on load
 function elementsChange() {
-  /* Hides checkbox if js is enabled */
-  document.getElementById('reveal_password_container').style.display = 'none';
-  /* Reveals reveals checkbox image if js is enabled */
-  document.getElementById('revealPasswordImage').style.display = 'inline-block';
-  /* Hides radio buttons for cards if js is enabled */
-  document.getElementsByClassName('form--section_card-image-radio')[0].style.display = 'none';
   /* Gets all cards and changes it's opacity */
   var cardPictures = document.getElementsByClassName('card--inactive');
   for(var i = 0; i < cardPictures.length; i++) {
